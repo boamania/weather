@@ -51,44 +51,39 @@ android {
 
 dependencies {
     implementation(libs.androidx.foundation.android)
-    implementation(libs.androidx.foundation.android)
-    implementation(libs.androidx.foundation.android)
-    implementation(libs.androidx.foundation.android)
-    implementation(libs.androidx.foundation.android)
-    implementation(libs.androidx.foundation.android)
-    implementation(libs.androidx.foundation.android)
-    implementation(libs.androidx.foundation.android)
-    dependencies {
-        // Core dependencies
-        implementation(libs.androidx.core.ktx.v1120)
-        implementation(libs.androidx.lifecycle.runtime.ktx.v262)
-        implementation(libs.androidx.activity.compose.v180)
+    // Core dependencies
+    implementation(libs.androidx.core.ktx.v1120)
+    implementation(libs.androidx.lifecycle.runtime.ktx.v262)
+    implementation(libs.androidx.activity.compose.v180)
 
-        // Compose dependencies
-        implementation(libs.ui)
-        implementation(libs.material3)
-        implementation(libs.androidx.lifecycle.viewmodel.compose)
-        implementation(libs.androidx.ui.v151)
-        implementation(libs.androidx.ui.text)
+    // Compose dependencies
+    implementation(libs.ui)
+    implementation(libs.material3)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.ui.v151)
+    implementation(libs.androidx.ui.text)
 
-        // Retrofit for API calls
-        implementation(libs.retrofit)
-        implementation(libs.converter.gson)
-        implementation(libs.androidx.datastore.preferences)
+    // Retrofit for API calls
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.androidx.datastore.preferences)
 
-        // Testing dependencies
-        testImplementation(libs.junit)
-        testImplementation(libs.mockito.kotlin)
-        testImplementation(libs.kotlinx.coroutines.test)
+    // Google's Location Services
+    implementation(libs.play.services.location)
+    implementation(libs.androidx.core)
 
-        // Add the missing InstantTaskExecutorRule dependency
-        testImplementation(libs.androidx.core.testing)
+    // Testing dependencies
+    testImplementation(libs.junit)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.kotlinx.coroutines.test)
 
-        androidTestImplementation(libs.androidx.junit.v115)
-        androidTestImplementation(libs.androidx.espresso.core.v351)
+    // Add the missing InstantTaskExecutorRule dependency
+    testImplementation(libs.androidx.core.testing)
 
-        debugImplementation(libs.ui.tooling)
-        debugImplementation(libs.ui.test.manifest)
-    }
+    androidTestImplementation(libs.androidx.junit.v115)
+    androidTestImplementation(libs.androidx.espresso.core.v351)
+
+    debugImplementation(libs.ui.tooling)
+    debugImplementation(libs.ui.test.manifest)
 
 }

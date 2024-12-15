@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Clima</string>
+    <string name="enter_city">Ingrese ciudad (por ejemplo, Irvine,CA,US)</string>
+    <string name="search_button">Buscar</string>
+    <string name="error_message">Error: %1$s</string>
+    <string name="city_label">Ciudad: %1$s</string>
+    <string name="temperature_label">Temperatura: %1$s°C</string>
+    <string name="condition_label">Condición: %1$s</string>
+</resources>
