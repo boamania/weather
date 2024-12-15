@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="enter_city">Enter city (e.g., Irvine,CA,US)</string>
+    <string name="search_button">Search</string>
+    <string name="error_message">Error: %1$s</string>
+    <string name="city_label">City: %1$s</string>
+    <string name="temperature_label">Temperature: %1$s°C</string>
+    <string name="condition_label">Condition: %1$s</string>
+</resources>
