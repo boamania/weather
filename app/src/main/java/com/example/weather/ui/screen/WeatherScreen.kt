@@ -13,10 +13,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
 import com.example.weather.R
 import com.example.weather.viewmodel.WeatherViewModel
 import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun WeatherScreen(viewModel: WeatherViewModel = viewModel()) {
     val state by viewModel.weatherState.collectAsState()
@@ -71,34 +74,33 @@ fun WeatherScreen(viewModel: WeatherViewModel = viewModel()) {
             }
             state.error != null -> {
                 Text(
-                    text = "Error: ${state.error}",
+                    text = stringResource(R.string.error_message, state.error!!),
                     color = MaterialTheme.colorScheme.error
                 )
             }
             state.weatherData != null -> {
                 state.weatherData?.let { weather ->
                     Text(
-                        text = "City: ${weather.name}",
+                        text = stringResource(R.string.city_label, weather.name),
                         style = MaterialTheme.typography.titleMedium
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
-                        text = "Temperature: ${weather.main.temp}°C",
+                        text = stringResource(R.string.temperature_label, weather.main.temp),
                         style = MaterialTheme.typography.bodyLarge
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         weather.weather.firstOrNull()?.icon?.let { icon ->
-                            // Display the icon
-                            Image(
-                                painter = painterResource(id = getWeatherIconResource(icon)),
+                            GlideImage(
+                                model = "https://openweathermap.org/img/wn/$icon@2x.png",
                                 contentDescription = "Weather Icon",
                                 modifier = Modifier.size(48.dp)
                             )
                             Spacer(modifier = Modifier.width(8.dp))
                         }
                         Text(
-                            text = "Condition: ${weather.weather.firstOrNull()?.description ?: "Unknown"}",
+                            text = stringResource(R.string.condition_label, weather.weather.firstOrNull()?.description ?: "Unknown"),
                             style = MaterialTheme.typography.bodyLarge
                         )
                     }

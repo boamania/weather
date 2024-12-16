@@ -3,7 +3,7 @@ package com.example.weather.viewmodel
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.weather.data.utils.LocationHelper
+import com.example.weather.utils.LocationHelper
 import com.example.weather.R
 import com.example.weather.data.datastore.LastSearchDataStore
 import com.example.weather.data.api.WeatherApi
@@ -36,7 +36,7 @@ class WeatherViewModel(
                     // Make API call to fetch weather data using latitude and longitude.
                     val response = weatherApiService.getCurrentWeatherByCoordinates(it.latitude, it.longitude)
                     _weatherState.value = WeatherState(weatherData = response)
-                } ?: run {9
+                } ?: run {
                     // Handle case where location is unavailable.
                     _weatherState.value = WeatherState(error = context.getString(R.string.unable_to_fetch_location))
                 }

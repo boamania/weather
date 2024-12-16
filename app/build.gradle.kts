@@ -72,6 +72,8 @@ dependencies {
     implementation(libs.play.services.location)
     implementation(libs.androidx.core)
 
+    implementation(libs.compose)
+
     // Testing dependencies
     testImplementation(libs.junit)
     testImplementation(libs.mockito.kotlin)
