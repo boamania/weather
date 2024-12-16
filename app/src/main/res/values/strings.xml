@@ -6,4 +6,6 @@
     <string name="city_label">City: %1$s</string>
     <string name="temperature_label">Temperature: %1$s°C</string>
     <string name="condition_label">Condition: %1$s</string>
+    <string name="unknown" translatable="false">Unknown</string>
+    <string name="unable_to_fetch_location" translatable="false">Unable to fetch location</string>
 </resources>

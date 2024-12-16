@@ -30,6 +30,7 @@ fun WeatherScreen(viewModel: WeatherViewModel = viewModel()) {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        // TextField for entering the city name
         TextField(
             value = searchQuery,
             onValueChange = { searchQuery = it },
@@ -41,6 +42,7 @@ fun WeatherScreen(viewModel: WeatherViewModel = viewModel()) {
             keyboardActions = KeyboardActions(
                 onSearch = {
                     coroutineScope.launch {
+                        // Fetch weather on pressing Search
                         viewModel.fetchWeather(searchQuery)
                     }
                 }
@@ -49,6 +51,7 @@ fun WeatherScreen(viewModel: WeatherViewModel = viewModel()) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        // Button to trigger weather search
         Button(
             onClick = {
                 coroutineScope.launch {
@@ -105,6 +108,12 @@ fun WeatherScreen(viewModel: WeatherViewModel = viewModel()) {
     }
 }
 
+/**
+ * Function to map weather icon names to drawable resources.
+ *
+ * @param iconName The name of the weather icon.
+ * @return The corresponding drawable resource ID.
+ */
 // icon name to drawable resource
 fun getWeatherIconResource(iconName: String): Int {
     return when (iconName) {
