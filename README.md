@@ -56,7 +56,6 @@ The app uses the OpenWeatherMap API for fetching weather data.
 │   │   │   └── MainActivity.kt
 │   │   ├── res
 │   │   │   ├── drawable
-│   │   │   │   └── (Weather icons, e.g., ic_weather_01d.xml)
 │   │   │   ├── values
 │   │   │   │   ├── strings.xml
 │   │   │   │   ├── colors.xml
