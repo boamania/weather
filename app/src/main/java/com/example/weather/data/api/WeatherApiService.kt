@@ -9,7 +9,7 @@ import retrofit2.http.Query
 // Base URL for the OpenWeatherMap API
 private const val BASE_URL = "https://api.openweathermap.org/data/2.5/"
 // API Key for authentication with OpenWeatherMap
-private const val API_KEY = "2a06b9804f9f69d2f5928e71922bce4e"
+private const val API_KEY = "MY_KEY"
 // Default units for temperature (metric for Celsius)
 private const val UNITS = "metric"
 
